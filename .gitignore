@@ -1,0 +1,5 @@
+doc/
+*.aep
+jsconfig.json
+main.jsx
+test.jsx
