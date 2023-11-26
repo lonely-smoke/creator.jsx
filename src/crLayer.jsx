@@ -15,16 +15,22 @@ function CrLayer(){
  * 设置图层的属性
  * @param {Object} options 属性组
  * @param {number[]} options.position 位置
- * @param {number} options.xPosition
- * @param {number} options.yPosition
- * @param {number} options.zPosition
- * @param {number[]} options.anchorPoint
- * @param {number[]} options.scale
- * @param {number} options.rotation
- * @param {number} options.opacity
- * @param {CrLayer} option.mask
+ * @param {number} options.xPosition x位置
+ * @param {number} options.yPosition y位置
+ * @param {number} options.zPosition z位置
+ * @param {number[]} options.anchorPoint 锚点
+ * @param {number[]} options.scale 缩放
+ * @param {number} options.rotation 旋转
+ * @param {number} options.opacity 不透明度
+ * @param {CrLayer} option.mask 蒙版
+ * @todo 暂不考虑3D支持
  */
 CrLayer.prototype.setProperty = function(options){
+
+  if(options == undefined){
+    return;
+  }
+
   if("position" in options){
     this.aeLayer.position.setValue(options.position);
   }

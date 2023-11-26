@@ -24,10 +24,24 @@ function CrComp(compName, duration, width, height, pixelAspect, frameRate) {
 /**
  * 添加形状图层
  * @param {string} layerName 图层名称
- * @param {Object} options 可选参数
+ * @param {Object} options 可选参数：属性组
+ * @param {number[]} options.position 位置
+ * @param {number} options.xPosition x位置
+ * @param {number} options.yPosition y位置
+ * @param {number} options.zPosition z位置
+ * @param {number[]} options.anchorPoint 锚点
+ * @param {number[]} options.scale 缩放
+ * @param {number} options.rotation 旋转
+ * @param {number} options.opacity 不透明度
+ * @param {CrLayer} option.mask 蒙版
  * @returns 
  */
 CrComp.prototype.addShapeLayer = function(layerName, options){
   var shaperLayer = new CrShapeLayer(layerName, this);
+  shaperLayer.setProperty(options);
   return shaperLayer;
+}
+
+CrComp.prototype.openInViewer = function(){
+  this.aeCompItem.openInViewer();
 }
