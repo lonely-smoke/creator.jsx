@@ -59,3 +59,5 @@ CrLayer.prototype.setProperty = function(options){
     this.aeLayer.opacity.setValue(options.opacity);
   }
 }
+
+// TODO:简单的飞入动画实现
